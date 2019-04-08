@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	#dev-timer
+		section.container.text-center.setter
+			div.d-inline-block.align-top
+				h5 Total development time
+				include ./components/hours-minutes-seconds.pug
+			div.d-inline-block.align-top.border-left
+				h5 Initial agitation duration
+				include ./components/hours-minutes-seconds.pug
+			div.d-inline-block.align-top.border-left
+				h5 Other agitations duration
+				include ./components/hours-minutes-seconds.pug
+				h5.mt-4 Agitations cadence
+				include ./components/hours-minutes-seconds.pug

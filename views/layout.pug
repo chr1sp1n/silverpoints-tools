@@ -1,0 +1,15 @@
+doctype html
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		script(src='javascripts/jquery.min.js')
+		script(src='javascripts/TweenLite.min.js')
+		script(src='javascripts/EasePack.min.js')
+		script(src='javascripts/CSSPlugin.min.js')
+		script(src='javascripts/main.js')
+		script(src='javascripts/hms.js')
+	body
+		include ./components/header.pug
+		#main
+			block content

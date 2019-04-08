@@ -1,0 +1,44 @@
+.container
+	.hours-minute-seconds
+		.labels.d-flex.justify-content-around
+			label Hours
+			label Minutes
+			label Seconds
+		.hours
+			button.up.btn.btn-default
+				img(src="images/icons/up-arrow.svg")
+			.value
+				.values
+					- var n = 0
+					while n < 3
+						div= n++
+			button.down.btn.btn-default
+				img(src="images/icons/down-arrow.svg")
+		span :
+		.minutes
+			button.up.btn.btn-default
+				img(src="images/icons/up-arrow.svg")
+			.value
+				.values
+					- var n = 0
+					while n < 60
+						if n > 9
+							div= n++
+						else
+							div= '0' + n++
+			button.down.btn.btn-default
+				img(src="images/icons/down-arrow.svg")
+		span :
+		.seconds
+			button.up.btn.btn-default
+				img(src="images/icons/up-arrow.svg")
+			.value
+				.values
+					- var n = 0
+					while n < 60
+						if n > 9
+							div= n++
+						else
+							div= '0' + n++
+			button.down.btn.btn-default
+				img(src="images/icons/down-arrow.svg")

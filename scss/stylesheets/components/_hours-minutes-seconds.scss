@@ -1,0 +1,59 @@
+.hours-minute-seconds{
+	display: inline-block;
+	background-color: $gray-100;
+	padding: 5px 10px;
+	font-size: 28px;
+	text-align: center;
+	box-shadow: $box-shadow-sm;
+	border: 1px solid $gray-200;
+	&>.labels{
+		padding: 10px 0 0 0;
+		label{
+			font-size: .5em;
+			margin: 0;
+			flex: 1;
+		}
+	}
+	&>div:not(.labels){
+		display: inline-block;
+		vertical-align: middle;
+		font-weight: 500;
+		line-height: 1.25;
+		margin: 0 5px;
+		&:first-of-type{
+			margin-left: 0;
+		}
+		&:last-of-type{
+			margin-right: 0;
+		}
+		button{
+			width: 100%;
+			opacity: .3;
+			img{
+				width: 1.5em;
+				height: 1.5em;
+			}
+			&:hover{
+				opacity: 1;
+			}
+			transition: opacity $transitions-base-time;
+		}
+		.value{
+			position: relative;
+			background-image: linear-gradient($gray-150, white, $gray-150);
+			text-align: center;
+			height: 2em;
+			min-width: 2.5em;
+			overflow: hidden;
+			border: 1px solid $gray-200;
+			padding: .5em .5em .75em .5em;
+			box-shadow: $box-shadow-sm-inset;
+			.values{
+				position: relative;
+				&>div{
+					line-height: 1.2;
+				}
+			}
+		}
+	}
+}
