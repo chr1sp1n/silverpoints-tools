@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
 var requireDir = require('require-dir');
-
+var babelCompiler = require('./babel-compiler');
 
 var app = express();
 
@@ -13,20 +13,24 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(sassMiddleware({
-  src: path.join(__dirname, 'scss'),
+app.use( logger('dev') );
+app.use( express.json() );
+app.use( express.urlencoded({ extended: false }) );
+app.use( cookieParser() );
+app.use( sassMiddleware({
+  src: path.join(__dirname, 'src/scss'),
   dest: path.join(__dirname, 'public'),
   indentedSyntax: false, // true = .sass and false = .scss
   sourceMap: true
 }));
-app.use(express.static(path.join(__dirname, 'public')));
+
+app.use( babelCompiler({
+	test: 'test'
+}));
+
+app.use( express.static(path.join(__dirname, 'public')) );
 
 var routes = requireDir(path.join(__dirname, 'routes'));
-
 app.use('/', routes.index);
 app.use('/users', routes.users);
 app.use('/dev-timer', routes.devTimer);

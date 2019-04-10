@@ -17,5 +17,9 @@
     "node-sass-middleware": "0.11.0",
     "pug": "2.0.0-beta11",
     "require-dir": "^1.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3"
   }
 }
